@@ -1,4 +1,4 @@
-package proyectotrivial;
+package trivial;
 
 
 
