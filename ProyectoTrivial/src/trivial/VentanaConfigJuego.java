@@ -12,12 +12,12 @@ package trivial;
  * @author javpin
  */
 
-public class juego extends javax.swing.JFrame {
+public class VentanaConfigJuego extends javax.swing.JFrame {
 public int i=0;
     /**
      * Creates new form juego
 */
-    public juego() {
+    public VentanaConfigJuego() {
         initComponents();
         this.setSize(600, 300);
     }
@@ -110,7 +110,8 @@ public int i=0;
         int j=Integer.parseInt(jugadores.getItemAt(jugadores.getSelectedIndex()));
         String c=categoria.getItemAt(categoria.getSelectedIndex());
         int n=Integer.parseInt(numero.getItemAt(numero.getSelectedIndex()));
-        Trivial t = new Trivial(j,c,n,i);
+        JuegoTrivial jugar = new JuegoTrivial(j,c,n);
+        //VentanaJuegoTrivial t = new VentanaJuegoTrivial(j,c,n);
         t.setVisible(true);
         
         

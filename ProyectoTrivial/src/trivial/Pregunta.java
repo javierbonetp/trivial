@@ -5,8 +5,6 @@ package trivial;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 /**
  *
  * @author javpin
@@ -15,10 +13,12 @@ public class Pregunta {
 
     public static String pregunta = "";
     public static String respuestas[] = {"", "", "", ""};
-    public static String preguntas[] = {"", "", "", ""};
-public String[] leepreguntas(){
-    return preguntas;
-}
+    //public static String preguntas[] = {"", "", "", ""};
+
+    //public String[] leepreguntas() {
+    //    return preguntas;
+    //}
+
     public String getPregunta() {
         return pregunta;
     }

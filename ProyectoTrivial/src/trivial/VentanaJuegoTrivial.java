@@ -5,27 +5,24 @@ package trivial;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 /**
  *
  * @author javpin
  */
-public class Trivial extends javax.swing.JFrame {
+public class VentanaJuegoTrivial extends javax.swing.JFrame {
 
     /**
      * Creates new form Trivial
      */
-    
-    Pregunta pr[]=new Pregunta[20];
+    Pregunta pr[] = null;
     private int jugadores;
     private String categoria;
     private int numero;
-    public int i=0;
-    public Trivial(int j, String c, int n, int i) {
+    public int i = 0;
+
+    public VentanaJuegoTrivial(int j, String c, int n, int i) {
         initComponents();
-        
-        
+
         jLabel1.setVisible(false);
         jLabel2.setVisible(false);
         jLabel3.setVisible(false);
@@ -74,14 +71,14 @@ public class Trivial extends javax.swing.JFrame {
         jSeparator5.setVisible(false);
         jSeparator6.setVisible(false);
         jSeparator7.setVisible(false);
-        
+
         correcto.setVisible(false);
         jLabel5.setText("0");
-        jugadores=j;
-        categoria=c;
-        numero=n;
-        
-        if(jugadores==1){
+        jugadores = j;
+        categoria = c;
+        numero = n;
+
+        if (jugadores == 1) {
             jLabel1.setVisible(true);
             jLabel2.setVisible(true);
             jLabel3.setVisible(true);
@@ -92,7 +89,7 @@ public class Trivial extends javax.swing.JFrame {
             jCheckBox3.setVisible(true);
             jCheckBox4.setVisible(true);
             jButton1.setVisible(true);
-        }else if (jugadores==2){
+        } else if (jugadores == 2) {
             jLabel1.setVisible(true);
             jLabel2.setVisible(true);
             jLabel3.setVisible(true);
@@ -113,7 +110,7 @@ public class Trivial extends javax.swing.JFrame {
             jCheckBox8.setVisible(true);
             jButton1.setVisible(true);
             jButton2.setVisible(true);
-        }else if (jugadores==3){
+        } else if (jugadores == 3) {
             jLabel1.setVisible(true);
             jLabel2.setVisible(true);
             jLabel3.setVisible(true);
@@ -144,88 +141,87 @@ public class Trivial extends javax.swing.JFrame {
             jButton1.setVisible(true);
             jButton2.setVisible(true);
             jButton3.setVisible(true);
-        }else if (jugadores==4){
+        } else if (jugadores == 4) {
             jLabel1.setVisible(true);
-        jLabel2.setVisible(true);
-        jLabel3.setVisible(true);
-        jLabel4.setVisible(true);
-        jLabel5.setVisible(true);
-        jLabel6.setVisible(true);
-        jLabel7.setVisible(true);
-        jLabel8.setVisible(true);
-        jLabel9.setVisible(true);
-        jLabel10.setVisible(true);
-        jLabel11.setVisible(true);
-        jLabel12.setVisible(true);
-        jLabel13.setVisible(true);
-        jLabel14.setVisible(true);
-        jLabel15.setVisible(true);
-        jLabel16.setVisible(true);
-        jLabel17.setVisible(true);
-        jLabel18.setVisible(true);
-        jLabel19.setVisible(true);
-        jLabel20.setVisible(true);
-        jCheckBox1.setVisible(true);
-        jCheckBox2.setVisible(true);
-        jCheckBox3.setVisible(true);
-        jCheckBox4.setVisible(true);
-        jCheckBox5.setVisible(true);
-        jCheckBox6.setVisible(true);
-        jCheckBox7.setVisible(true);
-        jCheckBox8.setVisible(true);
-        jCheckBox9.setVisible(true);
-        jCheckBox10.setVisible(true);
-        jCheckBox11.setVisible(true);
-        jCheckBox12.setVisible(true);
-        jCheckBox13.setVisible(true);
-        jCheckBox14.setVisible(true);
-        jCheckBox15.setVisible(true);
-        jCheckBox16.setVisible(true);
-        jButton1.setVisible(true);
-        jButton2.setVisible(true);
-        jButton3.setVisible(true);
-        jButton4.setVisible(true);
-        jSeparator1.setVisible(true);
-        jSeparator5.setVisible(true);
-        jSeparator6.setVisible(true);
-        jSeparator7.setVisible(true);
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jLabel5.setVisible(true);
+            jLabel6.setVisible(true);
+            jLabel7.setVisible(true);
+            jLabel8.setVisible(true);
+            jLabel9.setVisible(true);
+            jLabel10.setVisible(true);
+            jLabel11.setVisible(true);
+            jLabel12.setVisible(true);
+            jLabel13.setVisible(true);
+            jLabel14.setVisible(true);
+            jLabel15.setVisible(true);
+            jLabel16.setVisible(true);
+            jLabel17.setVisible(true);
+            jLabel18.setVisible(true);
+            jLabel19.setVisible(true);
+            jLabel20.setVisible(true);
+            jCheckBox1.setVisible(true);
+            jCheckBox2.setVisible(true);
+            jCheckBox3.setVisible(true);
+            jCheckBox4.setVisible(true);
+            jCheckBox5.setVisible(true);
+            jCheckBox6.setVisible(true);
+            jCheckBox7.setVisible(true);
+            jCheckBox8.setVisible(true);
+            jCheckBox9.setVisible(true);
+            jCheckBox10.setVisible(true);
+            jCheckBox11.setVisible(true);
+            jCheckBox12.setVisible(true);
+            jCheckBox13.setVisible(true);
+            jCheckBox14.setVisible(true);
+            jCheckBox15.setVisible(true);
+            jCheckBox16.setVisible(true);
+            jButton1.setVisible(true);
+            jButton2.setVisible(true);
+            jButton3.setVisible(true);
+            jButton4.setVisible(true);
+            jSeparator1.setVisible(true);
+            jSeparator5.setVisible(true);
+            jSeparator6.setVisible(true);
+            jSeparator7.setVisible(true);
         }
-        
-        if(categoria.equals("Musica")){
-        pr=ApiManager.damePreguntasmusica(numero);
-       // pr=Pregunta.leepreguntas();
-       System.out.println("i:" + i);
-       System.out.println("pr de i:" + pr[i].getPregunta());
-        jLabel3.setText(pr[i].getPregunta());
-        jCheckBox1.setText(Pregunta.respuestas[2]);
-        jCheckBox2.setText(Pregunta.respuestas[3]);
-        jCheckBox3.setText(Pregunta.respuestas[0]);
-        jCheckBox4.setText(Pregunta.respuestas[1]);
+
+        if (categoria.equals("Musica")) {
+            pr = ApiManager.damePreguntasmusica(numero);
+            // pr=Pregunta.leepreguntas();
+            System.out.println("i:" + i);
+            System.out.println("pr de i:" + pr[i].getPregunta());
+            jLabel3.setText(pr[i].getPregunta());
+            jCheckBox1.setText(Pregunta.respuestas[2]);
+            jCheckBox2.setText(Pregunta.respuestas[3]);
+            jCheckBox3.setText(Pregunta.respuestas[0]);
+            jCheckBox4.setText(Pregunta.respuestas[1]);
         }
-        if(categoria.equals("Peliculas")){
-        ApiManager.damePreguntaspeliculas(numero);
-        jLabel3.setText(Pregunta.pregunta);
-        jCheckBox1.setText(Pregunta.respuestas[2]);
-        jCheckBox2.setText(Pregunta.respuestas[3]);
-        jCheckBox3.setText(Pregunta.respuestas[0]);
-        jCheckBox4.setText(Pregunta.respuestas[1]);
+        if (categoria.equals("Peliculas")) {
+            ApiManager.damePreguntaspeliculas(numero);
+            jLabel3.setText(Pregunta.pregunta);
+            jCheckBox1.setText(Pregunta.respuestas[2]);
+            jCheckBox2.setText(Pregunta.respuestas[3]);
+            jCheckBox3.setText(Pregunta.respuestas[0]);
+            jCheckBox4.setText(Pregunta.respuestas[1]);
         }
-        if(categoria.equals("Libros")){
-        ApiManager.damePreguntaslibros(numero);
-        jLabel3.setText(Pregunta.pregunta);
-        jCheckBox1.setText(Pregunta.respuestas[2]);
-        jCheckBox2.setText(Pregunta.respuestas[3]);
-        jCheckBox3.setText(Pregunta.respuestas[0]);
-        jCheckBox4.setText(Pregunta.respuestas[1]);
+        if (categoria.equals("Libros")) {
+            ApiManager.damePreguntaslibros(numero);
+            jLabel3.setText(Pregunta.pregunta);
+            jCheckBox1.setText(Pregunta.respuestas[2]);
+            jCheckBox2.setText(Pregunta.respuestas[3]);
+            jCheckBox3.setText(Pregunta.respuestas[0]);
+            jCheckBox4.setText(Pregunta.respuestas[1]);
         }
-        
-    }
-    
-    public static void voydandopreguntas(){
-        
+
     }
 
-    
+    public static void voydandopreguntas() {
+
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -654,14 +650,14 @@ public class Trivial extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(jCheckBox3.isSelected()){
+        if (jCheckBox3.isSelected()) {
             correcto.setVisible(true);
-            int anterior=Integer.parseInt(jLabel5.getText());
-            jLabel5.setText(Integer.toString(anterior+1));
+            int anterior = Integer.parseInt(jLabel5.getText());
+            jLabel5.setText(Integer.toString(anterior + 1));
         }
         i++;
         System.out.println("i: " + i);
-        Trivial Tri = new Trivial(jugadores, categoria, numero, i);
+        VentanaJuegoTrivial Tri = new VentanaJuegoTrivial(jugadores, categoria, numero, i);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -709,14 +705,17 @@ public class Trivial extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Trivial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaJuegoTrivial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Trivial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaJuegoTrivial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Trivial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaJuegoTrivial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Trivial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaJuegoTrivial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
