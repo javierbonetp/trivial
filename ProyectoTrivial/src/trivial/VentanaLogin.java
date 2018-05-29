@@ -1,5 +1,6 @@
 package trivial;
 
+import javax.swing.JOptionPane;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -81,8 +82,6 @@ public class VentanaLogin extends javax.swing.JFrame {
 
         contra.setText("jPasswordField1");
         getContentPane().add(contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 180, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/trivial/fondo_login.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -90,8 +89,11 @@ public class VentanaLogin extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if(((usuario.getText().equals("Anonimo"))&&(contra.getPassword().equals("123")))){
+        if(((usuario.getText().equals("Anonimo"))&&(contra.getText().equals("123")))){
             new VentanaConfigJuego().setVisible(true);
+        }
+        else{
+             JOptionPane.showMessageDialog(null, "Usuario y/ó contraseña incorrecto");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

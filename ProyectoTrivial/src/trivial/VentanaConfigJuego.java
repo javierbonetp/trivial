@@ -1,22 +1,23 @@
 package trivial;
 
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 /**
  *
  * @author javpin
  */
-
 public class VentanaConfigJuego extends javax.swing.JFrame {
-public int i=0;
+
+    public int i = 0;
+
     /**
      * Creates new form juego
-*/
+     */
     public VentanaConfigJuego() {
         initComponents();
         this.setSize(600, 300);
@@ -107,14 +108,14 @@ public int i=0;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int j=Integer.parseInt(jugadores.getItemAt(jugadores.getSelectedIndex()));
-        String c=categoria.getItemAt(categoria.getSelectedIndex());
-        int n=Integer.parseInt(numero.getItemAt(numero.getSelectedIndex()));
-        JuegoTrivial jugar = new JuegoTrivial(j,c,n);
-        //VentanaJuegoTrivial t = new VentanaJuegoTrivial(j,c,n);
+        int j = Integer.parseInt(jugadores.getItemAt(jugadores.getSelectedIndex()));
+        String c = categoria.getItemAt(categoria.getSelectedIndex());
+        int n = Integer.parseInt(numero.getItemAt(numero.getSelectedIndex()));
+        
+        VentanaJuegoTrivial t = new VentanaJuegoTrivial(j, c, n);
         t.setVisible(true);
-        
-        
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
