@@ -36,6 +36,8 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
     //TODO todo el codigo necesario para mostrar la informacion del juego que se le pide al objeto jt
     private void MostrarInformaciondeljuego() {
         jlabelpregunta.setText(jt.getpreguntaactual().getPregunta());
+        jlnumpregunta.setText(Integer.toString(jt.getnumpreguntaactual()));
+        jlnumjugador.setText(Integer.toString(jt.getjugadoractual()));
     }
 
     public static void voydandopreguntas() {
@@ -56,10 +58,10 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jlabelpregunta = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        jcr1 = new javax.swing.JCheckBox();
+        jcr2 = new javax.swing.JCheckBox();
+        jcr3 = new javax.swing.JCheckBox();
+        jcr4 = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         correcto = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -73,8 +75,10 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
+        jlnumpregunta = new javax.swing.JLabel();
+        jlnumjugador = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,18 +88,18 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
 
         jlabelpregunta.setText("jLabel3");
 
-        jCheckBox1.setText("jCheckBox1");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        jcr1.setText("jCheckBox1");
+        jcr1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                jcr1ActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setText("jCheckBox2");
+        jcr2.setText("jCheckBox2");
 
-        jCheckBox3.setText("jCheckBox3");
+        jcr3.setText("jCheckBox3");
 
-        jCheckBox4.setText("jCheckBox4");
+        jcr4.setText("jCheckBox4");
 
         jButton1.setText("Responder");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -130,9 +134,14 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
 
         jLabel29.setText("jLabel29");
 
-        jLabel30.setText("jLabel30");
+        jlnumpregunta.setText("jLabel30");
 
-        jLabel31.setText("jLabel31");
+        jlnumjugador.setText("jLabel31");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel3.setText("Trivial");
+
+        jLabel6.setText("Y aprende inglés");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,6 +150,8 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel3)
                     .addComponent(jLabel4)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,27 +174,31 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(correcto))
                     .addComponent(jLabel1)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox1)
+                    .addComponent(jcr2)
+                    .addComponent(jcr3)
+                    .addComponent(jcr4)
+                    .addComponent(jcr1)
                     .addComponent(jLabel2)
                     .addComponent(jlabelpregunta)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel22)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel31))
+                            .addComponent(jlnumjugador))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel21)
                             .addGap(18, 18, 18)
-                            .addComponent(jLabel30))))
+                            .addComponent(jlnumpregunta))))
                 .addContainerGap(577, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(116, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -200,11 +215,11 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
-                    .addComponent(jLabel30))
+                    .addComponent(jlnumpregunta))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(jLabel31))
+                    .addComponent(jlnumjugador))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(16, 16, 16)
@@ -212,13 +227,13 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(11, 11, 11)
-                .addComponent(jCheckBox1)
+                .addComponent(jcr1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox2)
+                .addComponent(jcr2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox3)
+                .addComponent(jcr3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox4)
+                .addComponent(jcr4)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -238,9 +253,9 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void jcr1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcr1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_jcr1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,10 +300,6 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
     private static javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel correcto;
     static javax.swing.JButton jButton1;
-    static javax.swing.JCheckBox jCheckBox1;
-    static javax.swing.JCheckBox jCheckBox2;
-    static javax.swing.JCheckBox jCheckBox3;
-    static javax.swing.JCheckBox jCheckBox4;
     private static javax.swing.JLabel jLabel1;
     static javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
@@ -300,10 +311,16 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private static javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    static javax.swing.JCheckBox jcr1;
+    static javax.swing.JCheckBox jcr2;
+    static javax.swing.JCheckBox jcr3;
+    static javax.swing.JCheckBox jcr4;
     static javax.swing.JLabel jlabelpregunta;
+    private javax.swing.JLabel jlnumjugador;
+    private javax.swing.JLabel jlnumpregunta;
     // End of variables declaration//GEN-END:variables
 }
