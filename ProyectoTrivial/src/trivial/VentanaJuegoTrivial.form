@@ -44,21 +44,21 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlacertadas1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlacertadas2" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlacertadas3" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlacertadas4" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -109,10 +109,10 @@
               </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlacertadas1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlacertadas2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlacertadas3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlacertadas4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -235,7 +235,7 @@
         <Property name="text" type="java.lang.String" value="Preguntas acertadas"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="jlacertadas1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel5"/>
       </Properties>
@@ -273,17 +273,17 @@
         <Property name="text" type="java.lang.String" value="Jugador 4"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel27">
+    <Component class="javax.swing.JLabel" name="jlacertadas2">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel27"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel28">
+    <Component class="javax.swing.JLabel" name="jlacertadas3">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel28"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel29">
+    <Component class="javax.swing.JLabel" name="jlacertadas4">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel29"/>
       </Properties>
