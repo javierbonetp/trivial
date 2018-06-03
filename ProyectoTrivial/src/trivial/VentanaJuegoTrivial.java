@@ -34,7 +34,7 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
         numero = n;
         try {
             //cambio n por 2
-            jt = new JuegoTrivial(j, c, 2);
+            jt = new JuegoTrivial(j, c, n);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error desconocido");
         }
