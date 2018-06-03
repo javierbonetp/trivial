@@ -11,8 +11,8 @@ package trivial;
  */
 public class Pregunta {
 
-    public static String pregunta = "";
-    public static String respuestas[] = {"", "", "", ""};
+    public String pregunta = "";
+    public String respuestas[] = {"", "", "", ""};
     //public static String preguntas[] = {"", "", "", ""};
 
     //public String[] leepreguntas() {

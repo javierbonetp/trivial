@@ -54,6 +54,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         jLabel1.setText("Contraseña:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
+        usuario.setText("Anonimo");
         jScrollPane1.setViewportView(usuario);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 180, -1));
@@ -78,7 +79,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         jLabel4.setText("trivial");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 440, 120));
 
-        contra.setText("jPasswordField1");
+        contra.setText("123");
         getContentPane().add(contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 180, -1));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 

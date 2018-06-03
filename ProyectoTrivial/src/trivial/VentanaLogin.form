@@ -65,6 +65,9 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
         <Component class="javax.swing.JTextPane" name="usuario">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Anonimo"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -109,7 +112,7 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="contra">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+        <Property name="text" type="java.lang.String" value="123"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

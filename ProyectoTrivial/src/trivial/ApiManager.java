@@ -9,14 +9,16 @@ import java.util.Scanner;
 
 public class ApiManager {
 
-    public static Pregunta[] damePreguntasmusica(int npre) {
+    Pregunta preguntas[];
+    
+    public Pregunta[] damePreguntasmusica(int npre) {
         //Categoria musica, nivel medio
         int categoria = 12;
 
         return damePreguntas(npre, categoria);
     }
 
-    public static Pregunta[] damePreguntaspeliculas(int npre) {
+    public Pregunta[] damePreguntaspeliculas(int npre) {
 
         //Categoria peliculas, nivel medio
         int categoria = 11;
@@ -25,7 +27,7 @@ public class ApiManager {
 
     }
 
-    public static Pregunta[] damePreguntaslibros(int npre) {
+    public Pregunta[] damePreguntaslibros(int npre) {
 
         //Categoria peliculas, nivel medio
         int categoria = 10;
@@ -34,18 +36,17 @@ public class ApiManager {
 
     }
 
-    public static Pregunta[] damePreguntas(int npreguntas, int categoria) {
+    public Pregunta[] damePreguntas(int npreguntas, int categoria) {
 
-        Pregunta preguntas[] = new Pregunta[npreguntas];
+        preguntas = new Pregunta[npreguntas];
 
         String salida = MiClienteREST.request("https://opentdb.com/api.php?amount=" + npreguntas + "&category=" + categoria + "&difficulty=medium&type=multiple&encode=url3986");
-        
+        //System.out.println("Salida: " + salida);
         try {
             JSONObject obj = new JSONObject(salida);
             JSONArray results = obj.getJSONArray("results");
             
             // Procesamos las preguntas
-            System.out.println("Numero preguntas: " + results.length());
             for (int i = 0; i < results.length(); i++) {
                 
                 preguntas[i] = new Pregunta();
@@ -72,6 +73,8 @@ public class ApiManager {
                 
                 //Este return solo devuelve en el caso de que solo muestre una pregunta
                 //return preguntas;
+                System.out.println("pregunta: " + i);
+                preguntas[i].imprimePregunta();
             }
             return preguntas;
             

@@ -21,25 +21,24 @@ public class JuegoTrivial {
         njugadores = numerojugadores;
         cat = categoria;
         npreguntas = numerodepreguntas;
+        ApiManager am = new ApiManager();
 
         if (cat.equals("Musica")) {
-            preguntas = ApiManager.damePreguntasmusica(npreguntas * njugadores);
+            preguntas = am.damePreguntasmusica(npreguntas * njugadores);
         } else if (cat.equals("Peliculas")) {
-            preguntas = ApiManager.damePreguntaspeliculas(npreguntas * njugadores);
+            preguntas = am.damePreguntaspeliculas(npreguntas * njugadores);
         } else if (cat.equals("Libros")) {
-            preguntas = ApiManager.damePreguntaslibros(npreguntas * njugadores);
+            preguntas = am.damePreguntaslibros(npreguntas * njugadores);
         } else {
             
             //Se para el programa; no continua
             throw new Exception("Categoría desconocida");
         }
-
-        acertadas = new int[njugadores];
-        for (int i = 0; i < njugadores; i++) {
-            acertadas[i] = 0;
+        for(int i=0;i<preguntas.length;i++){
+            preguntas[i].imprimePregunta();
         }
-        
-        //Prueba
+
+        acertadas = new int[4];
         for (int i = 0; i < 4; i++) {
             acertadas[i] = 0;
         }
@@ -48,35 +47,43 @@ public class JuegoTrivial {
 
     public int getjugadoractual() {
 
-        return jugadoractual + 1;
+        return jugadoractual;
     }
 
     public int getnumpreguntaactual() {
 
-        return preguntaactual + 1;
+        return preguntaactual;
     }
 
     public Pregunta getpreguntaactual() {
-        return preguntas[(jugadoractual * 10) + preguntaactual];
+        System.out.println("Jugador actual: " + jugadoractual);
+        System.out.println("Pregunta actual: " + preguntaactual);
+        return preguntas[(jugadoractual * npreguntas) + preguntaactual];
     }
 
     public int[] getpuntuaciones() {
         return acertadas;
     }
 
-    public boolean comprobarrespuesta(int respuesta) {
+    public boolean comprobarrespuesta(String respuestaelegida) {
+        boolean correcta=false;
+        if (respuestaelegida.equals(getpreguntaactual().getRespuestas()[0])) {
+            acertadas[jugadoractual]++;
+            correcta=true;
+        }
+        
         jugadoractual = jugadoractual + 1;
-        if (jugadoractual > njugadores) {
+        if (jugadoractual >= njugadores) {
             preguntaactual = preguntaactual + 1;
             jugadoractual = 0;
         }
-        if (respuesta == 3) {
-            return true;
-        }
-        return false;
+        
+        return correcta;
     }
 
     public boolean hafinalizado() {
+        System.out.println("Numpreguntas: " + npreguntas);
+        System.out.println("Pregunta acutual: " + preguntaactual);
         if (preguntaactual >= npreguntas) {
             return true;
         }

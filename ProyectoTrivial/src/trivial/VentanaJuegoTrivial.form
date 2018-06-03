@@ -73,11 +73,7 @@
                       </Group>
                   </Group>
                   <Component id="jcr1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="correcto" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="577" max="32767" attributes="0"/>
           </Group>
@@ -131,10 +127,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jcr4" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="correcto" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -287,11 +280,6 @@
           <ComponentRef name="buttonGroup1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jCheckBox1"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="correcto">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Correcto ;)"/>
       </Properties>
     </Component>
   </SubComponents>
