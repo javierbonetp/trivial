@@ -38,6 +38,11 @@ public class JuegoTrivial {
         for (int i = 0; i < njugadores; i++) {
             acertadas[i] = 0;
         }
+        
+        //Prueba
+        for (int i = 0; i < 4; i++) {
+            acertadas[i] = 0;
+        }
 
     }
 
