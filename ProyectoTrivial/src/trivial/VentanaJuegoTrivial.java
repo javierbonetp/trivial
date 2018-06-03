@@ -30,7 +30,6 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Categoría desconocida");
         }
-        //Falta hacer grupo en los jchechbox
         MostrarInformaciondeljuego();
     }
 
@@ -44,11 +43,10 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
         jlacertadas2.setText(Integer.toString(jt.acertadas[1]));
         jlacertadas3.setText(Integer.toString(jt.acertadas[2]));
         jlacertadas4.setText(Integer.toString(jt.acertadas[3]));
-        //Mal No muestra la respuesta
-        //jcr1.setText(jt.getpreguntaactual().getRespuestas(0));
-        //jcr2.setText(jt.getpreguntaactual().getRespuestas[1]);
-        //jcr3.setText(jt.getpreguntaactual().getRespuestas[2]);
-        //jcr4.setText(jt.getpreguntaactual().getRespuestas[4]);
+        jcr1.setText(jt.getpreguntaactual().getRespuestas()[0]);
+        jcr2.setText(jt.getpreguntaactual().getRespuestas()[1]);
+        jcr3.setText(jt.getpreguntaactual().getRespuestas()[2]);
+        jcr4.setText(jt.getpreguntaactual().getRespuestas()[3]);
     }
 
     public static void voydandopreguntas() {
@@ -65,16 +63,10 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jlabelpregunta = new javax.swing.JLabel();
-        jcr1 = new javax.swing.JCheckBox();
-        jcr2 = new javax.swing.JCheckBox();
-        jcr3 = new javax.swing.JCheckBox();
-        jcr4 = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
-        correcto = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jlacertadas1 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -90,6 +82,11 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
         jlnumjugador = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jcr1 = new javax.swing.JCheckBox();
+        jcr2 = new javax.swing.JCheckBox();
+        jcr3 = new javax.swing.JCheckBox();
+        jcr4 = new javax.swing.JCheckBox();
+        correcto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,29 +96,12 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
 
         jlabelpregunta.setText("jLabel3");
 
-        jcr1.setText("jCheckBox1");
-        jcr1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcr1ActionPerformed(evt);
-            }
-        });
-
-        jcr2.setText("jCheckBox2");
-
-        jcr3.setText("jCheckBox3");
-
-        jcr4.setText("jCheckBox4");
-
         jButton1.setText("Responder");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        correcto.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        correcto.setForeground(new java.awt.Color(238, 13, 13));
-        correcto.setText("Has acertado! ;)");
 
         jLabel4.setText("Preguntas acertadas");
 
@@ -154,6 +134,20 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
 
         jLabel6.setText("Y aprende inglés");
 
+        buttonGroup1.add(jcr1);
+        jcr1.setText("jCheckBox1");
+
+        buttonGroup1.add(jcr2);
+        jcr2.setText("jCheckBox1");
+
+        buttonGroup1.add(jcr3);
+        jcr3.setText("jCheckBox1");
+
+        buttonGroup1.add(jcr4);
+        jcr4.setText("jCheckBox1");
+
+        correcto.setText("Correcto ;)");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -161,6 +155,9 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jcr4)
+                    .addComponent(jcr3)
+                    .addComponent(jcr2)
                     .addComponent(jLabel6)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
@@ -180,15 +177,7 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlacertadas4)
                             .addComponent(jLabel26)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(correcto))
                     .addComponent(jLabel1)
-                    .addComponent(jcr2)
-                    .addComponent(jcr3)
-                    .addComponent(jcr4)
-                    .addComponent(jcr1)
                     .addComponent(jLabel2)
                     .addComponent(jlabelpregunta)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -199,7 +188,12 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel21)
                             .addGap(18, 18, 18)
-                            .addComponent(jlnumpregunta))))
+                            .addComponent(jlnumpregunta)))
+                    .addComponent(jcr1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(correcto)))
                 .addContainerGap(577, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -209,7 +203,7 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -237,15 +231,15 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
                 .addComponent(jlabelpregunta)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addGap(11, 11, 11)
-                .addComponent(jcr1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jcr1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jcr2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jcr3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jcr4)
-                .addGap(18, 18, 18)
+                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(correcto))
@@ -262,27 +256,27 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
         //Mal no pasa a la siguiente pregunta
         //Mal no esconde el titulo correcto
         correcto.setVisible(false);
-        if(jcr1.isSelected()){
+        if(jcr1.isSelected()==true){
             if(jt.comprobarrespuesta(0)){
                 //Devuelve true
-                correcto.setVisible(true);
+                correcto.setVisible(false);
             }
-        }else if(jcr2.isSelected()){
+        }else if(jcr2.isSelected()==true){
             if(jt.comprobarrespuesta(1)){
                 //Devuelve true
-                correcto.setVisible(true);
+                correcto.setVisible(false);
             }
             
-        }else if(jcr3.isSelected()){
+        }else if(jcr3.isSelected()==true){
             if(jt.comprobarrespuesta(2)){
                 //Devuelve true
                 correcto.setVisible(true);
             }
             
-        }else if(jcr4.isSelected()){
+        }else if(jcr4.isSelected()==true){
             if(jt.comprobarrespuesta(3)){
                 //Devuelve true
-                correcto.setVisible(true);
+                correcto.setVisible(false);
             }
             
         }
@@ -290,10 +284,6 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
         
 
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jcr1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcr1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcr1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -334,8 +324,7 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.ButtonGroup buttonGroup1;
-    private static javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel correcto;
     static javax.swing.JButton jButton1;
     private static javax.swing.JLabel jLabel1;
@@ -349,10 +338,10 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    static javax.swing.JCheckBox jcr1;
-    static javax.swing.JCheckBox jcr2;
-    static javax.swing.JCheckBox jcr3;
-    static javax.swing.JCheckBox jcr4;
+    private javax.swing.JCheckBox jcr1;
+    private javax.swing.JCheckBox jcr2;
+    private javax.swing.JCheckBox jcr3;
+    private javax.swing.JCheckBox jcr4;
     static javax.swing.JLabel jlabelpregunta;
     private static javax.swing.JLabel jlacertadas1;
     private javax.swing.JLabel jlacertadas2;
