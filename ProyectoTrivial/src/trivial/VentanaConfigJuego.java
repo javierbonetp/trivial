@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  * and open the template in the editor.
  */
 /**
- *
+ * Clase Ventana de configuración del juego
  * @author javpin
  */
 public class VentanaConfigJuego extends javax.swing.JFrame {
@@ -16,7 +16,7 @@ public class VentanaConfigJuego extends javax.swing.JFrame {
     public int i = 0;
 
     /**
-     * Creates new form juego
+     * Constructor de la clase
      */
     public VentanaConfigJuego() {
         initComponents();
@@ -88,9 +88,9 @@ public class VentanaConfigJuego extends javax.swing.JFrame {
         numero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10", "20", "30" }));
         getContentPane().add(numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
         jLabel7.setText("Juega al Trivial y aprende Inglés ;)");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -103,6 +103,10 @@ public class VentanaConfigJuego extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jugadoresActionPerformed
 
+    /**
+     * Llama a la clase VentanaJuegoTrivial con los parametros elegidos por el jugador
+     * @param evt No utilizo este parámetro
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         int j = Integer.parseInt(jugadores.getItemAt(jugadores.getSelectedIndex()));

@@ -4,6 +4,10 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+/**
+ * Clase que ejecuta la API
+ * @author Javier
+ */
 public class MiClienteREST {
 	
 	// Realiza una peticion REST a la dirURL especificada.

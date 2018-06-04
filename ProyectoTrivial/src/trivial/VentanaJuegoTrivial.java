@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * and open the template in the editor.
  */
 /**
- *
+ *Clase VentanaJuegoTrivial
  * @author javpin
  */
 public class VentanaJuegoTrivial extends javax.swing.JFrame {
@@ -26,6 +26,12 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
     public int i = 0;
     JuegoTrivial jt;
 
+    /**
+     * Constructor de la clase
+     * @param j Número de jugadores elegidos
+     * @param c Categoría elegida
+     * @param n Número de preguntas elegidas
+     */
     public VentanaJuegoTrivial(int j, String c, int n) {
 
         initComponents();
@@ -42,6 +48,9 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
     }
 
     //TODO todo el codigo necesario para mostrar la informacion del juego que se le pide al objeto jt
+    /**
+     * Muestra TODA la información del juego
+     */
     private void MostrarInformaciondeljuego() {
         jlabelpregunta.setText(jt.getpreguntaactual().getPregunta());
         jlnumpregunta.setText(Integer.toString(jt.getnumpreguntaactual() + 1));
@@ -60,6 +69,11 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
         jcr4.setText(respuestasaleatorias[3]);
     }
 
+    /**
+     * Reordena las respuestas aleatoriamente para que la correcta no! esté siempre en el mismo lugar
+     * @param respuestas Devuelve un vector de Strings con las respuestas reordenadas
+     * @return 
+     */
     private String[] Reordenarrespuestasaleatoriamente(String[] respuestas) {
 
         ArrayList<String> solution = new ArrayList<>();
@@ -73,10 +87,6 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
             respuestasfinales[i]=solution.get(i);
         }
         return respuestasfinales;
-    }
-
-    public static void voydandopreguntas() {
-
     }
 
     /**
@@ -112,6 +122,7 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
         jcr2 = new javax.swing.JCheckBox();
         jcr3 = new javax.swing.JCheckBox();
         jcr4 = new javax.swing.JCheckBox();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,6 +141,7 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
 
         jLabel4.setText("Preguntas acertadas");
 
+        jlacertadas1.setForeground(new java.awt.Color(0, 0, 204));
         jlacertadas1.setText("jLabel5");
 
         jLabel21.setText("Número de pregunta");
@@ -144,19 +156,27 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
 
         jLabel26.setText("Jugador 4");
 
+        jlacertadas2.setForeground(new java.awt.Color(0, 0, 153));
         jlacertadas2.setText("jLabel27");
 
+        jlacertadas3.setForeground(new java.awt.Color(0, 0, 153));
         jlacertadas3.setText("jLabel28");
 
+        jlacertadas4.setForeground(new java.awt.Color(0, 0, 153));
         jlacertadas4.setText("jLabel29");
 
+        jlnumpregunta.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jlnumpregunta.setForeground(new java.awt.Color(255, 0, 0));
         jlnumpregunta.setText("jLabel30");
 
+        jlnumjugador.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jlnumjugador.setForeground(new java.awt.Color(255, 0, 0));
         jlnumjugador.setText("jLabel31");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Impact", 1, 100)); // NOI18N
         jLabel3.setText("Trivial");
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("Y aprende inglés");
 
         buttonGroup1.add(jcr1);
@@ -177,44 +197,47 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jcr4)
-                    .addComponent(jcr3)
-                    .addComponent(jcr2)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel23)
-                            .addComponent(jlacertadas1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24)
-                            .addComponent(jlacertadas2))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel25)
-                            .addComponent(jlacertadas3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlacertadas4)
-                            .addComponent(jLabel26)))
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jlabelpregunta)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jcr4)
+                        .addComponent(jcr3)
+                        .addComponent(jcr2)
+                        .addComponent(jLabel3)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel22)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jlnumjugador))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel21)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel23)
+                                .addComponent(jlacertadas1))
                             .addGap(18, 18, 18)
-                            .addComponent(jlnumpregunta)))
-                    .addComponent(jcr1)
-                    .addComponent(jButton1))
-                .addContainerGap(577, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel24)
+                                .addComponent(jlacertadas2))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel25)
+                                .addComponent(jlacertadas3))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jlacertadas4)
+                                .addComponent(jLabel26)))
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel2)
+                        .addComponent(jlabelpregunta)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jlnumjugador))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addGap(18, 18, 18)
+                                .addComponent(jlnumpregunta)))
+                        .addComponent(jcr1)
+                        .addComponent(jButton1)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6)))
+                .addContainerGap(586, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,50 +246,57 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel26))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlacertadas1)
-                    .addComponent(jlacertadas2)
-                    .addComponent(jlacertadas3)
-                    .addComponent(jlacertadas4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(jlnumpregunta))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(jlnumjugador))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(16, 16, 16)
-                .addComponent(jlabelpregunta)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jcr1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jcr2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jcr3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jcr4)
-                .addGap(15, 15, 15)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel26))
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlacertadas1)
+                            .addComponent(jlacertadas2)
+                            .addComponent(jlacertadas3)
+                            .addComponent(jlacertadas4))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel21)
+                            .addComponent(jlnumpregunta))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel22)
+                            .addComponent(jlnumjugador))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)
+                        .addGap(16, 16, 16)
+                        .addComponent(jlabelpregunta)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcr1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jcr2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcr3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcr4)
+                        .addGap(15, 15, 15)
+                        .addComponent(jButton1))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Comprueba si la respuesta elegida es la correcta
+     * @param evt No utilizo este parámetro
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO opción marcada y pasarla a jt.compruebarespuesta segun lo que
         //devuelva mostrar si correcto ó incorrecto y mostrar la información
@@ -375,6 +405,7 @@ public class VentanaJuegoTrivial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JCheckBox jcr1;
     private javax.swing.JCheckBox jcr2;
     private javax.swing.JCheckBox jcr3;

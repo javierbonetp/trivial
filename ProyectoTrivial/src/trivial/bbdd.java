@@ -7,12 +7,12 @@ package trivial;
  */
 
 
+
+import java.sql.*;
 /**
- *
+ * Clase para controlar la bbdd; no la utilizo
  * @author javpin
  */
-import java.sql.*;
-
 public class bbdd {
 
 public static void main(String[] args) throws SQLException {

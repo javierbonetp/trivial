@@ -3,7 +3,7 @@ package trivial;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Clase JuegoTrivial
  * @author javpin
  */
 public class JuegoTrivial {
@@ -16,6 +16,13 @@ public class JuegoTrivial {
     int jugadoractual = 0;
     int preguntaactual = 0;
 
+    /**
+     * Constructor de la clase
+     * @param numerojugadores Número de jugadores seleccionados
+     * @param categoria Categoría seleccionada
+     * @param numerodepreguntas Número de preguntas seleccionadas
+     * @throws Exception Controlamos alguna excepcion por categoría desconocida
+     */
     public JuegoTrivial(int numerojugadores, String categoria, int numerodepreguntas) throws Exception {
 
         njugadores = numerojugadores;
@@ -45,26 +52,45 @@ public class JuegoTrivial {
 
     }
 
+    /**
+     * Obtiene jugador actual
+     * @return Devuelve jugador actual
+     */
     public int getjugadoractual() {
 
         return jugadoractual;
     }
 
+    /**
+     * Obtiene número de pregunta actual, la que tiene que contestar el jugador
+     * @return Devuelve el número de pregunta
+     */
     public int getnumpreguntaactual() {
 
         return preguntaactual;
     }
 
+    /**
+     * Obtiene pregunta actual, la que tiene que contestar el jugador
+     * @return Devuelve la pregunta
+     */
     public Pregunta getpreguntaactual() {
-        System.out.println("Jugador actual: " + jugadoractual);
-        System.out.println("Pregunta actual: " + preguntaactual);
         return preguntas[(jugadoractual * npreguntas) + preguntaactual];
     }
 
+    /**
+     * Obtiene el número de preguntas acertadas
+     * @return Devuelve las preguntas acertadas de los jugadores
+     */
     public int[] getpuntuaciones() {
         return acertadas;
     }
 
+    /**
+     * Comprueba si la respuesta es correcta
+     * @param respuestaelegida Respuesta elegida por el jugador
+     * @return 
+     */
     public boolean comprobarrespuesta(String respuestaelegida) {
         boolean correcta=false;
         if (respuestaelegida.equals(getpreguntaactual().getRespuestas()[0])) {
@@ -81,15 +107,21 @@ public class JuegoTrivial {
         return correcta;
     }
 
+    /**
+     * Comprueba si ha finalizado el juego
+     * @return Devuelve si ha finalizado el juego
+     */
     public boolean hafinalizado() {
-        System.out.println("Numpreguntas: " + npreguntas);
-        System.out.println("Pregunta acutual: " + preguntaactual);
         if (preguntaactual >= npreguntas) {
             return true;
         }
         return false;
     }
 
+    /**
+     * Comprueba quien ha ganado
+     * @return Los ganadores
+     */
     public boolean[] getquienhaganado() {
         
         //Creamos vector boolean inicializado a false

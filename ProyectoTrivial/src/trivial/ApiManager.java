@@ -1,16 +1,22 @@
 package trivial;
 
-
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.*;
 import java.util.Scanner;
 
+/**
+ * Realiza de forma sencilla todas las peticiones a la API de Open Trivia
+ * @author Javier
+ */
 public class ApiManager {
 
     Pregunta preguntas[];
-    
+    /**
+     * Realiza la consulta a la API para que devuelva preguntas de música
+     * @param npre Número de preguntas que devuelve la API
+     * @return Devuelve las preguntas
+     */
     public Pregunta[] damePreguntasmusica(int npre) {
         //Categoria musica, nivel medio
         int categoria = 12;
@@ -18,6 +24,11 @@ public class ApiManager {
         return damePreguntas(npre, categoria);
     }
 
+    /**
+     * Realiza la consulta a la API para que devuelva preguntas de películas
+     * @param npre Número de preguntas que devuelve la API
+     * @return Devuelve las preguntas
+     */
     public Pregunta[] damePreguntaspeliculas(int npre) {
 
         //Categoria peliculas, nivel medio
@@ -27,6 +38,11 @@ public class ApiManager {
 
     }
 
+    /**
+     * Realiza la consulta a la API para que devuelva preguntas de libros
+     * @param npre Número de preguntas que devuelve la API
+     * @return Devuelve las preguntas
+     */
     public Pregunta[] damePreguntaslibros(int npre) {
 
         //Categoria peliculas, nivel medio
@@ -36,6 +52,12 @@ public class ApiManager {
 
     }
 
+    /**
+     * Devuelve las preguntas
+     * @param npreguntas Número de preguntas que devuelve
+     * @param categoria Categoría de las preguntas que devuelve
+     * @return 
+     */
     public Pregunta[] damePreguntas(int npreguntas, int categoria) {
 
         preguntas = new Pregunta[npreguntas];
@@ -84,6 +106,11 @@ public class ApiManager {
         return null;
     }
 
+    /**
+     * La API devuelve las preguntas con carácteres extraños, los reescribimos
+     * @param oraciones Devuelve la oración de la API bien escrita
+     * @return 
+     */
     public static String decodifica(String oraciones) {
         //Reemplazo el %20 por un espacio
         oraciones = oraciones.replace("%20", " ");

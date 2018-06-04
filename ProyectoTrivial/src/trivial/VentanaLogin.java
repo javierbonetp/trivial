@@ -9,13 +9,13 @@ import javax.swing.JOptionPane;
 
 
 /**
- *
+ * Clase VentanaLogin
  * @author javpin
  */
 public class VentanaLogin extends javax.swing.JFrame {
 
     /**
-     * Creates new form Login
+     * Constructor de la clase
      */
     public VentanaLogin() {
         initComponents();
@@ -48,16 +48,16 @@ public class VentanaLogin extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 1, 15)); // NOI18N
         jLabel2.setText("Usuario:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Roboto Medium", 1, 15)); // NOI18N
         jLabel1.setText("Contraseña:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
         usuario.setText("Anonimo");
         jScrollPane1.setViewportView(usuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 180, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 180, -1));
 
         jButton1.setText("Cancelar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +65,7 @@ public class VentanaLogin extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
 
         jButton2.setText("Aceptar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -73,23 +73,27 @@ public class VentanaLogin extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("URW Chancery L", 0, 150)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Impact", 1, 100)); // NOI18N
         jLabel4.setText("trivial");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 440, 120));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 440, 120));
 
         contra.setText("123");
-        getContentPane().add(contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 180, -1));
+        getContentPane().add(contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 180, -1));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Y aprende Inglés!!!");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Compruebo que el usuario y la contraseña sean corrrectos
+     * @param evt No utilizo este parámetro
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         if(((usuario.getText().equals("Anonimo"))&&(contra.getText().equals("123")))){
@@ -100,6 +104,10 @@ public class VentanaLogin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    /**
+     * Si presiona cancelar salgo del juego
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
